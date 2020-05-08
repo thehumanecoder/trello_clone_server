@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 500,
+    "max": 1000
+  },
+  "authentication": {
+    "secret": "d141326e38b0f72ed05dfa9d635bb6804fbd57ce190dfdc74bf6f33d2bb2c362fc724e148e0e614f3f58d6bc253ad746b0f232886f8e3c1dd216eb0f34001c3a2159879511f29132e4ef931bee895a7c8ce202bb88c18fe62abc8665319eb7ed3c6a25583dc9730997b92dc1dcf09bb6cb46295a8aa767e03837625dd032ccaa785457febda90494559e8887577bdbba48981cd7566b8683fcdf3b41cd1cdbfd8d3e6ca56cac940768edb66ba91ef81a72d34f4daae368aad4f574cd885af9005499280872df128901697f00cbc2d964204657ce6bc259edb7fccee1e1fcf8b75fb636ec2878f05ec9f3a24ca4b9c01ddadb0ded49cd3f5dd13e9c209c5223a5",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://commuter.com",
+      "subject": "Auth",
+      "issuer": "Arch Technologies & Media",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "username",
+      "passwordField": "password"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/commuter"
+}
